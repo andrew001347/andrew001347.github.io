@@ -1,12 +1,12 @@
-import React from 'react';
+
+import Navbar from './sections/Navbar.jsx';
+
 
 const App = () => {
   return (
-  <main className="bg-black text-white">
-    <h1 className="text-white text-2xl underline">Hello World</h1>
-
-  </main>
-
+    <main className="max-w-7xl mx-auto relative">
+      <Navbar />
+    </main>
   );
 };
 

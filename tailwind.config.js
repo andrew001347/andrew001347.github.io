@@ -7,7 +7,7 @@ export default {
       fontFamily: {
         generalsans: ['General Sans', 'sans-serif'],
       },
-      /*
+      
       colors: {
         black: {
           DEFAULT: '#000',
@@ -25,7 +25,7 @@ export default {
           500: '#62646C',
         },
       },
-      */
+      
       backgroundImage: {
         terminal: "url('/assets/terminal.png')",
       },

@@ -1,11 +1,15 @@
-import {React, Suspense} from 'react'
-import {Canvas} from '@react-three/fiber'
-import { PerspectiveCamera } from '@react-three/drei'
-import HackerRoom from '../components/HackerRoom'
-import CanvasLoader from '../components/CanvasLoader'
+import {React, Suspense} from 'react';
+import {Canvas} from '@react-three/fiber';
+import { PerspectiveCamera } from '@react-three/drei';
+import HackerRoom from '../components/HackerRoom';
+import CanvasLoader from '../components/CanvasLoader';
 //import { Leva, useControls } from 'leva' //Helps with object placements.
 import { useMediaQuery } from 'react-responsive';
 import { calculateSizes } from '../constants/index.js';
+import Target from '../constants/Target.jsx';
+import ReactLogo from '../components/ReactLogo.jsx';
+import Photoshop from '../components/Photoshop.jsx';
+
 
  const Hero = () => {
 //     //Leva useControls
@@ -49,7 +53,7 @@ import { calculateSizes } from '../constants/index.js';
 
                
                 
-                <PerspectiveCamera makeDefault position={[0,0,20]}/>
+                <PerspectiveCamera makeDefault position={[0,0,30]}/>
                 <HackerRoom 
                 
                // scale={0.05} 
@@ -58,6 +62,15 @@ import { calculateSizes } from '../constants/index.js';
                 scale={sizes.deskScale}
                 
                 /> 
+
+                <group>
+                    <Target position={sizes.targetPosition}/>
+                    <ReactLogo position={sizes.reactLogoPosition} />
+                    <Photoshop 
+                position={sizes.cubePosition || [0, 2, 0]} 
+                scale={sizes.cubeScale || 0.5} 
+              />
+                </group>
                 
                 <ambientLight intensity={1}/>
                 <directionalLight position={[10,10,10]} intensity={0.5}/>

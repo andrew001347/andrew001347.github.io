@@ -1,7 +1,9 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 
 import { navLinks } from '../constants/index.js';
 
+// eslint-disable-next-line react/prop-types
 const NavItems = ({ onClick = () => {} }) => (
   <ul className="nav-ul">
     {navLinks.map((item) => (

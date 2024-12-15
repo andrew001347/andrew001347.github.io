@@ -6,78 +6,66 @@ const HtmlLogo = ({ ...props }) => {
   const { nodes, materials } = useGLTF('/models/html5_logo.glb');
   const cubeRef = useRef();
   const [hovered, setHovered] = useState(false);
-  const [hoverDirection, setHoverDirection] = useState(null); // Left or Right direction
 
   useEffect(() => {
     if (cubeRef.current) {
       const tl = gsap.timeline();
 
       if (hovered) {
-        const rotationDirection = hoverDirection === 'left' ? '-=0.5' : '+=0.5';
-        tl.to(cubeRef.current.scale, { x: 0.3, y: 0.3, z: 0.3, duration: 0.5 }); // Increased size when hovered
-        tl.to(cubeRef.current.rotation, { x: '+=0.5', y: rotationDirection, duration: 0.5 }, '<');
+        tl.to(cubeRef.current.scale, { x: 0.3, y: 0.3, z: 0.3, duration: 0.5 }); // Scale up when hovered
+        tl.to(cubeRef.current.rotation, { y: '+=3', duration: 2, repeat: -1, yoyo: true }); // Spin around the Y-axis like a top
       } else {
-        tl.to(cubeRef.current.scale, { x: 0.2, y: 0.2, z: 0.2, duration: 0.5 }); // Slightly bigger when not hovered
+        tl.to(cubeRef.current.scale, { x: 0.2, y: 0.2, z: 0.2, duration: 0.5 }); // Return to default scale
+        tl.to(cubeRef.current.rotation, { y: 0, duration: 0.5 }); // Stop spinning when not hovered
       }
 
       return () => tl.kill(); // Cleanup animation timeline
     }
-  }, [hovered, hoverDirection]);
-
-  const handlePointerMove = (event) => {
-    // Determine if the hover is on the left or right of the logo
-    const { clientX } = event;
-    const { left, right } = event.target.getBoundingClientRect();
-    const isLeft = clientX < (left + right) / 2;
-    setHoverDirection(isLeft ? 'left' : 'right');
-  };
+  }, [hovered]);
 
   return (
-    <group
-      ref={cubeRef}
-      position={[0, 0, 0]} // Centered position
-      rotation={[0, 0, 0]} // Ensure the logo faces the viewer
-      scale={0.2} // Increased base scale for better visibility
-      dispose={null}
-      {...props}
-      onPointerOver={() => setHovered(true)}
-      onPointerOut={() => setHovered(false)}
-      onPointerMove={handlePointerMove} // Detect hover direction
-    >
-      <group {...props} dispose={null}>
-        <group position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane001_orange_0.geometry}
-            material={materials.orange}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes['Plane001_orange-lite_0'].geometry}
-            material={materials['orange-lite']}
-          />
+    <group {...props} dispose={null}>
+      <group position={[-0.014, 0.001, 0]} rotation={[-Math.PI / 2, 0.006, 0]}>
+        <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+          <group
+            position={[11.813, 52.914, -1.08]}
+            rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+            scale={82.789}>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Plane001_orange_0.geometry}
+              material={materials.orange}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes['Plane001_orange-lite_0'].geometry}
+              material={materials['orange-lite']}
+            />
+          </group>
           <mesh
             castShadow
             receiveShadow
             geometry={nodes['Plane_escudo-2_0'].geometry}
             material={materials['escudo-2']}
-            position={[0, 0, -0.1]} // Slight offset to prevent overlap
-            scale={1} // Base scale
+            position={[0, 0, -1.08]}
+            rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+            scale={100}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Plane002_five_0.geometry}
             material={materials.five}
-            position={[0, 0, 0.1]} // Slight offset
-            scale={1}
+            position={[61.853, 307.492, 35.171]}
+            rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+            scale={100}
           />
         </group>
       </group>
     </group>
-  );
+  )
 };
 
 useGLTF.preload('/models/html5_logo.glb');

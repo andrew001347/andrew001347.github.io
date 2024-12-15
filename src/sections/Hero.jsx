@@ -6,9 +6,11 @@ import CanvasLoader from '../components/CanvasLoader';
 //import { Leva, useControls } from 'leva' //Helps with object placements.
 import { useMediaQuery } from 'react-responsive';
 import { calculateSizes } from '../constants/index.js';
-import Target from '../constants/Target.jsx';
+//import Target from '../constants/Target.jsx';
 import ReactLogo from '../components/ReactLogo.jsx';
 import Photoshop from '../components/Photoshop.jsx';
+import Rings from '../components/Rings.jsx';
+import HtmlLogo from '../components/HtmlLogo.jsx';
 
 
  const Hero = () => {
@@ -64,16 +66,23 @@ import Photoshop from '../components/Photoshop.jsx';
                 /> 
 
                 <group>
-                    <Target position={sizes.targetPosition}/>
+                    <HtmlLogo position={sizes.targetPosition}/>
                     <ReactLogo position={sizes.reactLogoPosition} />
                     <Photoshop 
                 position={sizes.cubePosition || [0, 2, 0]} 
                 scale={sizes.cubeScale || 0.5} 
               />
+
+              <Rings position={sizes.ringPosition}/>
+
                 </group>
                 
                 <ambientLight intensity={1}/>
                 <directionalLight position={[10,10,10]} intensity={0.5}/>
+                
+                <spotLight position={sizes.targetPosition} intensity={5} angle={Math.PI / 4} penumbra={1} />
+
+
                 </Suspense>
             </Canvas>
         </div>

@@ -1,36 +1,56 @@
-import { Float, useGLTF } from '@react-three/drei';
+import { useGLTF } from '@react-three/drei';
 import gsap from 'gsap';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 const HtmlLogo = ({ ...props }) => {
   const { nodes, materials } = useGLTF('/models/html5_logo.glb');
-  const cubeRef = useRef();
+  const logoRef = useRef();
   const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
-    if (cubeRef.current) {
-      const tl = gsap.timeline();
+    // Continuous bounce effect
+    gsap.to(logoRef.current.position, {
+      y: '+=0.5',
+      duration: 1.5,
+      repeat: -1,
+      yoyo: true,
+      ease: 'power1.inOut',
+    });
+  }, []);
 
-      if (hovered) {
-        tl.to(cubeRef.current.scale, { x: 0.3, y: 0.3, z: 0.3, duration: 0.5 }); // Scale up when hovered
-        tl.to(cubeRef.current.rotation, { y: '+=3', duration: 2, repeat: -1, yoyo: true }); // Spin around the Y-axis like a top
-      } else {
-        tl.to(cubeRef.current.scale, { x: 0.2, y: 0.2, z: 0.2, duration: 0.5 }); // Return to default scale
-        tl.to(cubeRef.current.rotation, { y: 0, duration: 0.5 }); // Stop spinning when not hovered
-      }
+  const handleHover = () => {
+    setHovered(true);
+    gsap.to(logoRef.current.rotation, {
+      y: '+=12.5664', // 4 * Math.PI radians for two fast rotations
+      duration: 0.8, // Fast spin
+      ease: 'power1.inOut',
+    });
+  };
 
-      return () => tl.kill(); // Cleanup animation timeline
-    }
-  }, [hovered]);
+  const handleHoverOut = () => {
+    setHovered(false);
+    gsap.to(logoRef.current.rotation, {
+      y: 0, // Reset to original rotation
+      duration: 0.8,
+      ease: 'power1.inOut',
+    });
+  };
 
   return (
-    <group {...props} dispose={null}>
+    <group
+      {...props}
+      ref={logoRef}
+      onPointerOver={handleHover}
+      onPointerOut={handleHoverOut}
+      dispose={null}
+    >
       <group position={[-0.014, 0.001, 0]} rotation={[-Math.PI / 2, 0.006, 0]}>
-        <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+        <group rotation={[Math.PI / 2, 5, 0]} scale={0.01}>
           <group
             position={[11.813, 52.914, -1.08]}
             rotation={[-Math.PI / 2, Math.PI / 2, 0]}
-            scale={82.789}>
+            scale={82.789}
+          >
             <mesh
               castShadow
               receiveShadow
@@ -65,7 +85,7 @@ const HtmlLogo = ({ ...props }) => {
         </group>
       </group>
     </group>
-  )
+  );
 };
 
 useGLTF.preload('/models/html5_logo.glb');

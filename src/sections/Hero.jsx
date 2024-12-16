@@ -11,6 +11,9 @@ import ReactLogo from '../components/ReactLogo.jsx';
 import Photoshop from '../components/Photoshop.jsx';
 import Rings from '../components/Rings.jsx';
 import HtmlLogo from '../components/HtmlLogo.jsx';
+import HeroCamera from '../components/HeroCamera.jsx';
+
+import Button from '../components/Button.jsx';
 
 
  const Hero = () => {
@@ -45,7 +48,7 @@ import HtmlLogo from '../components/HtmlLogo.jsx';
 
         <div className='w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3'>
             <p className='sm:text-3xl text-2xl font-medium text-white text-center font-generalsans'>Hi, I am Andrew Kim <span className='waving-hand'>👋</span></p>
-            <p className='hero_tag text-gray_gradient text-center'>UX/UI Designer & Programmer </p>
+            <p className='hero_tag text-lightblue_gradient text-center'>UX/UI Designer & Programmer </p>
         </div>
         <div className='w-full h-full absolute inset-0'>
             {/* <Leva/> */}
@@ -56,14 +59,18 @@ import HtmlLogo from '../components/HtmlLogo.jsx';
                
                 
                 <PerspectiveCamera makeDefault position={[0,0,30]}/>
+                
+                <HeroCamera isMobile={isMobile}>
                 <HackerRoom 
                 
                // scale={0.05} 
                 position={sizes.deskPosition} 
-                rotation={[0.4, -Math.PI, 0.0]}
+                rotation={[0.2, -Math.PI, 0.0]}
                 scale={sizes.deskScale}
                 
                 /> 
+                </HeroCamera>
+
 
                 <group>
                     <HtmlLogo position={sizes.targetPosition}/>
@@ -80,12 +87,21 @@ import HtmlLogo from '../components/HtmlLogo.jsx';
                 <ambientLight intensity={1}/>
                 <directionalLight position={[10,10,10]} intensity={0.5}/>
                 
-                <spotLight position={sizes.targetPosition} intensity={5} angle={Math.PI / 4} penumbra={1} />
+                
 
 
                 </Suspense>
             </Canvas>
+
+
         </div>
+
+        <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+        <a href="#contact" className="w-fit">
+          <Button name="Let's work together" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
+        </a>
+      </div>
+
     </section>
   );
 };

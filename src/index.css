@@ -45,6 +45,14 @@ body {
     @apply bg-gradient-to-r from-[#BEC1CF] from-60% via-[#D5D8EA] via-60% to-[#D5D8EA] to-100% bg-clip-text text-transparent;
   }
 
+  .text-lightblue_gradient {
+    background: linear-gradient(to right, #a8e6ff, #d6f3ff); /* Light blue gradient */
+    -webkit-background-clip: text; /* Clipping the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Make the text itself transparent to reveal the gradient */
+    text-fill-color: transparent; /* For better browser compatibility */
+  }
+  
+
   /* button component */
   .btn {
     @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-black-300  transition-all active:scale-95 text-white mx-auto;

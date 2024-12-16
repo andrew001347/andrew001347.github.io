@@ -9,6 +9,8 @@ const HackerRoom = (props) =>{
 
   return (
     <group {...props} dispose={null}>
+
+      
       <mesh geometry={nodes.screen_screens_0.geometry} material={materials.screens}>
         <meshMatcapMaterial map={screenTxt} />
       </mesh>

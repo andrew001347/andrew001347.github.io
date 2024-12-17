@@ -58,13 +58,13 @@ export const navLinks = [
   
   export const myProjects = [
     {
-      title: 'Podcastr - AI Podcast Platform',
-      desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
+      title: 'News Radar',
+      desc: 'This Android application allows users to stay informed and up-to-date content curated to users. Users are able to customize their news feed to reflect their preferences and interests by getting news based on user\'s keywords. Users are also able to get news from specific subreddits and/or twitter users.',
       subdesc:
         'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.',
-      href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
+      href: 'https://play.google.com/store/apps/details?id=com.bignerdranch.android.newsapp',
       texture: '/textures/project/project1.mp4',
-      logo: '/assets/project-logo1.png',
+      logo: '/assets/project1icon.webp',
       logoStyle: {
         backgroundColor: '#2A1816',
         border: '0.2px solid #36201D',
@@ -74,34 +74,24 @@ export const navLinks = [
       tags: [
         {
           id: 1,
-          name: 'React.js',
-          path: '/assets/react.svg',
+          name: 'Kotlin',
+          path: '/assets/kotlinicon.svg',
         },
         {
           id: 2,
-          name: 'TailwindCSS',
-          path: 'assets/tailwindcss.png',
-        },
-        {
-          id: 3,
-          name: 'TypeScript',
-          path: '/assets/typescript.png',
-        },
-        {
-          id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
+          name: 'andriod',
+          path: '/assets/android.png',
         },
       ],
     },
     {
-      title: 'LiveDoc - Real-Time Google Docs Clone',
-      desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
+      title: 'SyncSchedule',
+      desc: 'SyncSchedule is a scheduling platform designed to streamline the coordination of events and appointments with ease and efficiency. Users are able to personalize their calendars to organize tasks and commitments. Users can not only manage their schedules but also collaborate effectively with others. An integrated chat system enables direct communication within the platform, facilitating real-time discussions and coordination among team members or group participants.',
       subdesc:
         'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
-      href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
+      href: 'https://github.com/CS4800-Code-G/Calendar',
       texture: '/textures/project/project2.mp4',
-      logo: '/assets/project-logo2.png',
+      logo: '/assets/schedule.png',
       logoStyle: {
         backgroundColor: '#13202F',
         border: '0.2px solid #17293E',
@@ -111,32 +101,32 @@ export const navLinks = [
       tags: [
         {
           id: 1,
-          name: 'React.js',
-          path: '/assets/react.svg',
+          name: 'HTML icon',
+          path: '/assets/html.svg',
         },
         {
           id: 2,
-          name: 'TailwindCSS',
-          path: 'assets/tailwindcss.png',
+          name: 'CSS icon',
+          path: 'assets/css.svg',
         },
         {
           id: 3,
-          name: 'TypeScript',
-          path: '/assets/typescript.png',
+          name: 'JavaScript icon',
+          path: '/assets/javascript.svg',
         },
         {
           id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
+          name: 'NodeJS icon',
+          path: '/assets/nodejs.svg',
         },
       ],
     },
     {
-      title: 'CarePulse - Health Management System',
-      desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
+      title: 'Cybersecurity VR Project',
+      desc: 'A virtual reality simulation of scenarios where players are faced with common social engineering tactics. The purpose of this VR game is to train players to spot and pick appropriate actions to take when confronted with deceptive techniques aimed at manipulating them into divulging sensitive information or performing unauthorized actions. Through immersive experiences, players will learn to recognize red flags, assess risks, and make informed decisions to safeguard themselves against the dangers of social engineering. With interactive decision-making, players will navigate various scenarios, honing their cybersecurity skills in a engaging environment.',
       subdesc:
         'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
-      href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
+      href: 'https://www.youtube.com/watch?v=d75T7h4YUA0',
       texture: '/textures/project/project3.mp4',
       logo: '/assets/project-logo3.png',
       logoStyle: {

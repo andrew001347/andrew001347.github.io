@@ -69,7 +69,7 @@ const About = () => {
               <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
               <p className="grid-subtext">I&apos;m based in California, USA and open to remote work worldwide.</p>
               <a href="https://www.linkedin.com/in/andrew-kim-872021209/" target="_blank" rel="noopener noreferrer" className="w-full mt-10 inline-block">
-              <Button name="Let's Connect" isBeam containerClass="w-full mt-10"/>
+              <Button name="Let's Connect" isBeam container Class="w-full mt-10"/>
               </a>
 
               

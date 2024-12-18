@@ -23,7 +23,9 @@ export const navLinks = [
     {
       id: 5,
       name: 'Resume',
-      href: '#contact',
+      href: '/assets/resume.jpg', 
+      target: '_blank',    
+      rel: 'noopener noreferrer', 
     },
   ];
   

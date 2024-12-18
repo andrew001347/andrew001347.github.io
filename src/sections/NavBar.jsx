@@ -6,7 +6,13 @@ const NavItems = ({ onClick = () => {} }) => (
   <ul className="nav-ul">
     {navLinks.map((item) => (
       <li key={item.id} className="nav-li">
-        <a href={item.href} className="nav-li_a" onClick={onClick}>
+        <a
+          href={item.href}
+          className="nav-li_a"
+          onClick={onClick}
+          target={item.target || '_self'} 
+          rel={item.target === '_blank' ? 'noopener noreferrer' : undefined}
+        >
           {item.name}
         </a>
       </li>

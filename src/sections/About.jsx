@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Globe from 'react-globe.gl'
 import Button from '../components/Button'
 
@@ -85,9 +85,9 @@ const About = () => {
             <div>
               <p className="grid-headtext">My Passion for Coding</p>
               <p className="grid-subtext">
-              My mission is to craft meaningful digital experiences that empower users. From designing user-centric interfaces 
-              to writing clean, scalable code, I love turning ideas into reality. I value collaboration and open communication,
-               ensuring every project I work on meets and exceeds expectations.
+              I’m passionate about continuously learning and improving. Programming has taught me the value of 
+              persistence and the excitement of discovery. Whether it’s creating intuitive user experiences or diving into 
+              the complexities of backend systems, I approach every challenge with curiosity and enthusiasm.
               </p>
             </div>
           </div>

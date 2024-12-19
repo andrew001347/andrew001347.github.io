@@ -11,10 +11,13 @@
   scroll-behavior: smooth;
 }
 
-body {
+html, body {
   background: #010103;
   font-family: 'General Sans', sans-serif;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+  overflow: visible; 
 }
+
 
 @layer utilities {
   .c-space {

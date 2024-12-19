@@ -1,9 +1,9 @@
 export const navLinks = [
-    {
-      id: 1,
-      name: 'Home',
-      href: '#home',
-    },
+  {
+    id: 1,
+    name: 'Home',
+    href: '#home',
+  },
     {
       id: 2,
       name: 'About',
@@ -11,17 +11,22 @@ export const navLinks = [
     },
     {
       id: 3,
-      name: 'Case Study',
-      href: '#work',
+      name: 'Projects',
+      href: '#projects',
     },
     {
       id: 4,
+      name: 'Case Study',
+      href: '#case',
+    },
+    {
+      id: 5,
       name: 'Contact',
       href: '#contact',
     },
 
     {
-      id: 5,
+      id: 6,
       name: 'Resume',
       href: '/assets/resume.jpg', 
       target: '_blank',    
@@ -230,6 +235,43 @@ export const navLinks = [
       targetPosition: isSmall ? [-5, -10, -10] : isMobile ? [-9, -10, -10] : isTablet ? [-11, -7, -10] : [-13, -13, -10],
     };
   };
+
+
+
+  export const caseStudy = [
+    {
+      id: 1,
+      title: "News Radar",
+      description: "Customizable news app on Google Play Store",
+      role: "UX Designer",
+      duration: "3 months",
+      tools: ["KotLin", "LucidChart"],
+      image: "https://via.placeholder.com/400x300",
+    },
+    {
+      id: 2,
+      title: "Project Title 2",
+      description: "This project focused on creating an interactive prototype for a mobile application.",
+      role: "Researcher",
+      duration: "2 months",
+      tools: ["Sketch", "InVision", "Notion"],
+      image: "https://via.placeholder.com/400x300",
+    },
+    // {
+    //   id: 3,
+    //   title: "Project Title 3",
+    //   description: "An ecommerce platform redesign aimed to improve user flow and increase conversions.",
+    //   role: "UI Designer",
+    //   duration: "4 months",
+    //   tools: ["Figma", "Zeplin", "Google Analytics"],
+    //   image: "https://via.placeholder.com/400x300",
+    // },
+  
+    
+  ];
+
+
+
   
   export const workExperiences = [
     {
@@ -260,3 +302,6 @@ export const navLinks = [
       animation: 'salute',
     },
   ];
+
+
+

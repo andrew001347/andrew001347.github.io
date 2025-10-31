@@ -27,7 +27,8 @@ const Projects = () => {
     <p className="head-text">Projects</p>
 
     <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
-      <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
+      <div className="relative flex flex-col justify-between sm:p-10 py-16 px-5 shadow-2xl shadow-black-200 min-h-[580px]">
+
         <div className="absolute top-0 right-0">
           <img src={currentProject.spotlight} alt="spotlight" className="w-full h-96 object-cover rounded-xl" />
         </div>
@@ -44,23 +45,42 @@ const Projects = () => {
         </div>
 
         <div className="flex items-center justify-between flex-wrap gap-5">
-          <div className="flex items-center gap-3">
-            {currentProject.tags.map((tag, index) => (
-              <div key={index} className="tech-logo">
-                <img src={tag.path} alt={tag.name} />
-              </div>
-            ))}
-          </div>
+  <div className="flex items-center gap-3">
+    {currentProject.tags.map((tag, index) => (
+      <div key={index} className="tech-logo">
+        <img src={tag.path} alt={tag.name} />
+      </div>
+    ))}
+  </div>
 
-          <a
-            className="flex items-center gap-2 cursor-pointer text-white-600"
-            href={currentProject.href}
-            target="_blank"
-            rel="noreferrer">
-            <p>Check Live Site</p>
-            <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
-          </a>
-        </div>
+  <div className="flex gap-4">
+    {/* Live Site */}
+    <a
+      className="flex items-center gap-2 cursor-pointer text-white-600 hover:text-yellow-300 transition"
+      href={currentProject.href}
+      target="_blank"
+      rel="noreferrer"
+      
+    >
+      <p>Check Live</p>
+      <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
+    </a>
+
+    {/* Prototype (only show if available) */}
+    {currentProject.prototype && (
+      <a
+        className="flex items-center gap-2 cursor-pointer text-white-600 hover:text-yellow-300 transition"
+        href={currentProject.prototype}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <p>View Prototype</p>
+        <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
+      </a>
+    )}
+  </div>
+</div>
+
 
         <div className="flex justify-between items-center mt-7">
           <button className="arrow-btn" onClick={() => handleNavigation('previous')}>

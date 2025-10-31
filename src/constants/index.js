@@ -20,6 +20,12 @@ export const navLinks = [
       href: '#case',
     },
     {
+      id: 7,
+      name: 'Graphic Design',
+      href: '#graphic',
+    },
+
+    {
       id: 5,
       name: 'Contact',
       href: '#contact',
@@ -28,7 +34,7 @@ export const navLinks = [
     {
       id: 6,
       name: 'Resume',
-      href: '/assets/resume.jpg', 
+      href: '/assets/resume.pdf', 
       target: '_blank',    
       rel: 'noopener noreferrer', 
     },
@@ -103,6 +109,7 @@ export const navLinks = [
       subdesc:
         'Built with HTML, CSS, JavaScript',
       href: 'https://github.com/CS4800-Code-G/Calendar',
+       prototype: 'https://www.figma.com/proto/xNU2LjOfyvKpDrOCGJ5Fjv/SyncSchedule?node-id=1-2&t=tircT72zvluQcny6-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=95%3A496',
       texture: '/textures/project/project2.mp4',
       logo: '/assets/syncschedule.jpg',
       logoStyle: {
@@ -161,7 +168,7 @@ export const navLinks = [
     },
     {
       title: 'We Play Tanks! Tanks!',
-      desc: 'A recreation of the popular Wii game, Wii Play - Tanks! Instead of utilizing the Wii console itself, players will now be able to play with their PCs. Incorporating similar environments and enemies, players will be able to relive their childhood game.   ​',
+      desc: 'A recreation of the popular Wii game, Wii Play - Tanks! Instead of utilizing the Wii console itself, players will now be able to play with their PCs. Incorporating similar environments and enemies, players will be able to relive their childhood game.   ',
       subdesc:
         'Built with C#, Unity',
       href: 'https://emergencyplayer.itch.io/we-play-tanks-tanks',
@@ -237,38 +244,284 @@ export const navLinks = [
   };
 
 
-
-  export const caseStudy = [
-    {
-      id: 1,
-      title: "News Radar",
-      description: "Customizable news app on Google Play Store",
-      role: "UX Designer",
-      duration: "3 months",
-      tools: ["KotLin", "LucidChart"],
-      image: "https://via.placeholder.com/400x300",
-    },
-    {
-      id: 2,
-      title: "Project Title 2",
-      description: "This project focused on creating an interactive prototype for a mobile application.",
-      role: "Researcher",
-      duration: "2 months",
-      tools: ["Sketch", "InVision", "Notion"],
-      image: "https://via.placeholder.com/400x300",
-    },
-    // {
-    //   id: 3,
-    //   title: "Project Title 3",
-    //   description: "An ecommerce platform redesign aimed to improve user flow and increase conversions.",
-    //   role: "UI Designer",
-    //   duration: "4 months",
-    //   tools: ["Figma", "Zeplin", "Google Analytics"],
-    //   image: "https://via.placeholder.com/400x300",
-    // },
-  
+export const caseStudy = [
+  {
+    id: 1,
+    title: "News Radar",
+    description:
+      "Customizable news app on Google Play Store delivering personalized and up-to-date news content.",
+    role: "UX Designer, Programmer",
+    duration: "4 months",
+    tools: ["Kotlin", "LucidChart", "GitHub"],
+    image: "/assets/project1icon.webp",
     
-  ];
+  
+    linkLabel: "View Project", // 👈 optional, defaults to "View Project"
+    link: "https://github.com/michael-m-truong/RSS-News-App", // 👈 add your URL here
+
+
+  //github
+  fullProject: "https://github.com/michael-m-truong/RSS-News-App",
+
+
+    showPrototype: false, 
+    details: [
+      {
+        heading: "Ideation:",
+        content:
+          "The idea for News Radar is designed to tackle the challenges of online searches. Finding specific topics can be difficult without precise queries and the ability to omit irrelevant terms. The idea for this is to simplify the process of searching and streamlining it, making it easier and more efficient to find exactly what you're looking for.",
+      },
+
+      {
+        heading: "Research:",
+        content:
+          "This project was inspired by our personal experiences with searching for topics online. Instead of repeatedly entering the same queries to check for updates or sifting through irrelevant content, we wanted to simplify and streamline the search process. Our goal was to make navigating and managing search queries faster, more efficient, and more intuitive. To achieve this, we adopted an agile methodology, focusing on the development and delivery of a Minimum Viable Product (MVP). By prioritizing the MVP, we were able to concentrate on the core functionality needed to address these challenges, ensuring a strong foundation for iterative improvements based on user feedback.",
+      },
+
+      {
+        heading: "Product Testing:",
+        content:
+          "Dogfooding: As developers, we tested the app ourselves to ensured a seamless user experience. User Testing: We collected feedback from actual users by reading comments on the app store.",
+      },
+
+      {
+        heading: "Challenges Encountered:",
+        content:
+          "Many users found it difficult to undo actions. To solve this, we introduced: A cancel button and a pop-up notification to alert users about their current actions.Navigation Issues: Users struggled with navigating the app, highlighting flaws in our information architecture (IA). Confirmation Alerts: Added notifications to allow users to confirm or cancel actions before significant UI changes.Revisions:",
+      },
+
+      {
+        heading: "Revisions",
+        content:
+          "Enhanced Information Architecture: We analyzed the IA of successful news apps and used the insights to restructure our app.Icons were rearranged and enlarged to ensure visibility and recognition.We used a iterative workflow to manage our project. We would first build a feature, test the feature, revise, and repeat.",
+      },
+
+      
+
+      {
+        heading: "Wireframe:",
+      
+        images: [
+          {
+            src: "/assets/mobile.jpg",
+          },
+        ],
+      },
+
+
+      {
+        heading: "Final Product",
+        content:
+          "The end product is a tailored news retrieval system based on the keywords you select. While News Radar is currently available, we are actively seeking reviews to enhance the app further. Developing this app has given me valuable experience in using Kotlin and making iterative improvements.",
+        images: [
+          {
+            src: "/assets/mobilefinal.jpg",
+          },
+        ],
+      },
+
+
+
+    ],
+  },
+
+  // 🆕 Add a new case study like this ↓
+{
+  id: 2,
+  title: "SyncSchedule",
+  description:
+    "SyncSchedule is a scheduling platform that simplifies event and appointment coordination...",
+  role: "Front-End Developer, UX Designer",
+  duration: "5 months",
+  tools: ["React", "Node.js", "MongoDB", "Stream API", "Figma"],
+  image: "/assets/syncschedule.jpg",
+  
+  // 👇 prototype
+  link: "https://www.figma.com/proto/xNU2LjOfyvKpDrOCGJ5Fjv/SyncSchedule?node-id=1-2&t=B4ahajrQO04SRZ4R-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=95%3A496",
+
+  //github
+  fullProject: "https://github.com/CS4800-Code-G/Calendar",
+
+  showPrototype: true,
+  details: [
+    {
+      heading: "Problem Statement",
+      content:
+        "Scheduling group events are often chaotic. Our goal was to design a seamless and intuitive solution for managing a shared calendar and direct messaging.",
+      images: [{ src: "/assets/board.jpg" }],
+    },
+    {
+      heading: "Ideation",
+      content:
+        "Research indicates that approximately 70% of adults use online calendars to organize their lives, highlighting the importance of scheduling tools in everyday life. To better understand user needs, interviews were conducted with club presidents and everyday students. This method enabled a comprehensive exploration of diverse perspectives and challenges. Some questions asked were: What tools or platforms do you currently use to manage your club’s activities?What is the biggest problem in organizing large group events? How do you notify members about where your meetings are held? How do you promote your events to ensure high participation? By focusing on these questions, the research provided valuable feedback that informed the platform's development, ensuring it addresses real-world challenges and enhances the user experience.",
+    },
+
+        {
+      heading: "Heuristic Evaluation:",
+      content:
+        "Responsive Design: Ensured the chat system adapted seamlessly to different screen sizes and devices for a consistent user experience. Pop-up Alerts: Added alerts to notify users of significant actions, such as deleting data or navigating away from unsaved forms. Color Consistency: Used consistent button colors (red for Cancel) to enhance recognizability and usability.",
+    },
+
+
+        {
+      heading: "Error Prevention & User Control:",
+      content:
+        "Validation Checks: Implemented form validation to prevent invalid login data.Undo Functionality: Enabled users to reverse actions like deleting items.Confirmation Alerts: Added notifications to allow users to confirm or cancel actions before significant UI change.",
+    },
+
+
+
+
+
+    {        
+    heading: "Wireframe:",
+        
+        images: [
+          {
+            src: "/assets/Main Page.png",
+          },
+          {
+            src: "/assets/Main Page-1.png",
+          },
+          {
+            src: "/assets/Main Page-2.png",
+          },
+
+        ],
+    },
+
+    {
+      heading: "User Testing & Privacy Enhancements:",
+      content:
+        "User Feedback: During testing, users appreciated the shared calendar system but raised concerns about privacy. Selective Sharing: In response, we allowed users to share specific events while keeping others private or restricted to certain individuals.",
+    },
+
+
+
+
+    {
+        heading: "Final Product",
+        content:
+          "Overall, I am very pleased with the outcome of SyncSchedule. It was designed to solve a common problem many encounter when planning group activities. The project provided me with exposure to key UI/UX principles and introduced me to new developer methodologies like Agile and Waterfall. Through this experience, I gained practical knowledge in HTML, JavaScript, and CSS. Moreover, SyncSchedule afforded me valuable leadership opportunities, enabling me to organize tasks and meetings effectively, and giving me a comprehensive understanding of web development.",
+        images: [
+          {
+            src: "/assets/morecalendar.jpg",
+          },
+        ],
+      },
+
+
+
+  ],
+},
+
+
+
+    {
+    id: 3,
+    title: "Waymo App Walkthrough",
+    description:
+      "A UX redesign concept for Waymo's app onboarding experience. It showcases what Waymo is and can do for user. The prototype includes pagination, sign-up, and login screens to enhance engagement and ease of use for new and returning users.",
+    role: "Front-End Developer, UX Designer",
+    
+duration: "3 days",
+    tools: ["Figma"],
+    image: "/assets/graphics/waymo.png",
+   
+    link: "https://www.figma.com/proto/HAeNnN9UFZtFuUskSbJ1fF/Mobile-App-Walkthrough--Andrew-Kim-Week6?node-id=1-4&t=BdvOAUM1G1PQzaRb-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A4", // optional link to prototype or repo
+    fullProject:"https://www.figma.com/proto/HAeNnN9UFZtFuUskSbJ1fF/Mobile-App-Walkthrough--Andrew-Kim-Week6?node-id=1-4&t=BdvOAUM1G1PQzaRb-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A4",
+    
+    showPrototype: true,
+    details: [
+    {
+      heading: "Objective",
+      content:
+        "To redesign Waymo’s onboarding experience for first-time users by clearly communicating the app’s key value — safe, autonomous ride-hailing — through motion and narrative design.",
+    },
+    
+    {
+      heading: "Design Approach",
+      content:
+        "The redesign features a four-screen onboarding flow with smooth pagination transitions, each screen highlighting what Waymo does and provides.",
+    },
+    
+    {
+      heading: "Prototype",
+      content:
+        "An interactive Figma prototype connects all onboarding, login, and sign-up screens. Micro-animations guide attention and improve flow, making the experience intuitive and engaging.",
+    },
+
+      {
+        heading: "Figma Snippets ",
+        content:
+          "",
+        images: [
+          { src: "/assets/graphics/First.png" },
+          { src: "/assets/graphics/Second.png" },
+          { src: "/assets/graphics/Third-Slide.png" },
+          { src: "/assets/graphics/Fourth-Slide.png" },
+          { src: "/assets/graphics/Sign Up.png" },
+          { src: "/assets/graphics/Sign In.png" },
+        ],
+
+      },
+      
+    ],
+  },
+
+
+
+
+
+
+
+
+];
+
+
+
+
+  
+export const graphicDesign = [
+  {
+    id: 2,
+    title: "Shark Infographic",
+    description:
+      "A infographic combining vector illustration, hierarchy, and typography to communicate factual information about the Great White Shark. ",
+    image: "/assets/graphics/infographic.jpg",
+    tags: ["Adobe Illutrator"],
+  },
+  {
+    id: 1,
+    title: "Mediclo Email Marketing",
+    description:
+      "Designed and optimized Mediclo’s email campaigns from concept to deployment, focusing on improving user engagement and conversion",
+    images: ["/assets/graphics/backtoschool.png","/assets/graphics/laborday.png","/assets/graphics/labordays.png","/assets/graphics/paradisegreen.png","/assets/graphics/terracotta.png"],  
+    tags: ["Photoshop", "Klaviyo"],
+  },
+  {
+    id: 3,
+    title: "Glyph Magazine: Bauhaus",
+    description:
+      "Magazine layout inspired by Bauhaus design, focusing on clean typography and balanced composition.",
+    images: ["/assets/graphics/magpages.jpg","/assets/graphics/magpages2.jpg","/assets/graphics/magpages3.jpg","/assets/graphics/magpages4.jpg","/assets/graphics/magpages5.jpg"],  
+    tags: ["Adobe InDesign", "Editorial Design"],
+  },
+
+    {
+    id: 4,
+    title: "Brain Trauma Ads",
+    description:
+      "Awareness ad series combining impactful visuals and concise messaging for print media in various page sizes.",
+    images: ["/assets/graphics/Kim-Andrew-Texting-Ad_page-0001.jpg","/assets/graphics/FullPage.jpg","/assets/graphics/2Thirds.jpg","/assets/graphics/1Third.jpg"],  
+    tags: ["Adobe InDesign", "Advertising Design"],
+  },
+
+];
+
+
+
+
 
 
 
@@ -302,6 +555,3 @@ export const navLinks = [
       animation: 'salute',
     },
   ];
-
-
-

@@ -7,7 +7,7 @@ export default {
       fontFamily: {
         generalsans: ['General Sans', 'sans-serif'],
       },
-      
+
       colors: {
         black: {
           DEFAULT: '#000',
@@ -25,11 +25,24 @@ export default {
           500: '#62646C',
         },
       },
-      
+
       backgroundImage: {
         terminal: "url('/assets/terminal.png')",
       },
+
+
+      animation: {
+        shine: "shine 3s ease-in-out infinite",
+      },
+      keyframes: {
+        shine: {
+          "0%": { transform: "translateX(-100%)" },
+          "50%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+      },
     },
   },
+
   plugins: [],
 };

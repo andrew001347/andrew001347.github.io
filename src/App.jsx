@@ -7,6 +7,7 @@ import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 import CaseStudy from './sections/CaseStudy';
 
+import GraphicDesign from './sections/GraphicDesign';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
     <About/>
     <Projects/>
     <CaseStudy/>
+    <GraphicDesign/>
 {/* <Clients/> */}
     <Contact/>
     <Footer/>

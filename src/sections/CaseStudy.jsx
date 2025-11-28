@@ -1,15 +1,31 @@
 import { caseStudy } from "../constants";
-import { useState } from "react";
+import { useState , useEffect } from "react";
+
 
 const CaseStudy = () => {
   const [selectedCaseStudy, setSelectedCaseStudy] = useState(null);
   const [visibleCount, setVisibleCount] = useState(3); // 👈 show first 3
+  const [carouselIndex, setCarouselIndex] = useState({}); // per-section index
+
+// move carousel for a given section (idx)
+const stepCarousel = (idx, dir, len) => {
+  setCarouselIndex((prev) => {
+    const current = prev[idx] ?? 0;
+    const next = (current + dir + len) % len;
+    return { ...prev, [idx]: next };
+  });
+};
+
+
+
 
   const handleShowMore = () => {
     if (visibleCount < caseStudy.length) {
       setVisibleCount((prev) => prev + 3);
     }
   };
+
+  
 
   const handleShowLess = () => {
     setVisibleCount(3);
@@ -164,23 +180,67 @@ const CaseStudy = () => {
                     </h3>
                     {section.content && <p className="mb-3">{section.content}</p>}
                     {section.images && section.images.length > 0 && (
-                      <div className="flex flex-col gap-6 mt-6">
-                        {section.images.map((img, i) => (
-                          <div key={i} className="-mx-6">
-                            <img
-                              src={img.src}
-                              alt={img.alt || `Case study ${i + 1}`}
-                              className="w-full max-h-[80vh] object-contain rounded-lg mx-auto"
-                            />
-                            {img.caption && (
-                              <p className="text-sm text-gray-400 mt-2 italic text-center">
-                                {img.caption}
-                              </p>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    )}
+  <div className="relative mt-6 -mx-6">
+    {/* current image */}
+    <img
+      src={section.images[ (carouselIndex[idx] ?? 0) ].src}
+      alt={
+        section.images[ (carouselIndex[idx] ?? 0) ].alt ||
+        `${selectedCaseStudy.title} image ${ (carouselIndex[idx] ?? 0) + 1 }`
+      }
+      className="w-full max-h-[80vh] object-contain rounded-lg mx-auto bg-black-300"
+    />
+
+    {/* caption (optional) */}
+    {section.images[ (carouselIndex[idx] ?? 0) ].caption && (
+      <p className="text-sm text-gray-400 mt-2 italic text-center px-6">
+        {section.images[ (carouselIndex[idx] ?? 0) ].caption}
+      </p>
+    )}
+
+    {/* arrows (show only if >1) */}
+    {section.images.length > 1 && (
+      <>
+        <button
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70
+                     text-white w-10 h-10 rounded-full flex items-center justify-center"
+          onClick={() => stepCarousel(idx, -1, section.images.length)}
+          aria-label="Previous image"
+        >
+          ←
+        </button>
+        <button
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70
+                     text-white w-10 h-10 rounded-full flex items-center justify-center"
+          onClick={() => stepCarousel(idx, +1, section.images.length)}
+          aria-label="Next image"
+        >
+          →
+        </button>
+
+        {/* dots */}
+        <div className="mt-3 flex items-center justify-center gap-2">
+          {section.images.map((_, dot) => {
+            const active = (carouselIndex[idx] ?? 0) === dot;
+            return (
+              <button
+                key={dot}
+                onClick={() =>
+                  setCarouselIndex((p) => ({ ...p, [idx]: dot }))
+                }
+                className={`w-2.5 h-2.5 rounded-full ${
+                  active ? "bg-white" : "bg-white/30"
+                }`}
+                aria-label={`Go to image ${dot + 1}`}
+              />
+            );
+          })}
+        </div>
+      </>
+    )}
+  </div>
+)}
+
                   </div>
                 ))}
               </div>

@@ -415,10 +415,78 @@ export const caseStudy = [
   ],
 },
 
+ {
+    id: 3,
+    title: "Seoul'd Out",
+    description:
+      "A modern KBBQ restaurant website designed to showcase the brand, menu, and location, helping customers quickly learn about the restaurant and plan their visit.",
+    role: "UX Designer, Programmer",
+    duration: "2 months",
+    tools: ["HTML", "CSS", "JS", "Figma"],
+    image: "/assets/icon.avif",
+    
+  
+    linkLabel: "View Project", // 👈 optional, defaults to "View Project"
+    link: "https://www.figma.com/design/ioEPG82tDpnqXMzwF8d7Up/Seoul-d-Out?node-id=0-1&t=GJtshfPPlvtDk2rU-1", // 👈 add your URL here
+
+
+  //github
+  fullProject: "https://andrew001347.github.io/seouldout/",
+
+
+    showPrototype: true, 
+    details: [
+      {
+        heading: "Goals/Objectives:",
+        content:
+          "The idea for News Radar is designed to tackle the challenges of online searches. Finding specific topics can be difficult without precise queries and the ability to omit irrelevant terms. The idea for this is to simplify the process of searching and streamlining it, making it easier and more efficient to find exactly what you're looking for.",
+      },
+
+      {
+        heading: "Primary and Secondary Message:",
+        content:
+          "Bring the taste and energy of real Korean barbecue. Turn a simple Korean BBQ experience to a social, energetic dining environment made for groups and celebrations.",
+      },
+
+
+      {
+        heading: "Competitive Analysis:",
+      
+        images: [
+          {
+            src: "/assets/comp.jpg",
+          },
+        ],
+      },
+
+
+        {
+        heading: "User Personas:",
+      
+        images: [
+          {
+            src: "/assets/users.jpg",
+          },
+        ],
+      },
+
+        {
+        heading: "Mood Board:",
+      
+        images: [
+          {
+            src: "/assets/inspo.jpg",
+          },
+        ],
+      },
+
+    ],
+  },
+
 
 
     {
-    id: 3,
+    id: 4,
     title: "Waymo App Walkthrough",
     description:
       "A UX redesign concept for Waymo's app onboarding experience. It showcases what Waymo is and can do for user. The prototype includes pagination, sign-up, and login screens to enhance engagement and ease of use for new and returning users.",

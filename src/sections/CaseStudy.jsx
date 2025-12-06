@@ -19,17 +19,14 @@ const stepCarousel = (idx, dir, len) => {
 
 
 
-  const handleShowMore = () => {
-    if (visibleCount < caseStudy.length) {
-      setVisibleCount((prev) => prev + 3);
-    }
-  };
+// handlers (replace your existing ones)
+const handleShowMore = () => {
+  setVisibleCount((prev) => Math.min(prev + 3, caseStudy.length));
+};
 
-  
-
-  const handleShowLess = () => {
-    setVisibleCount(3);
-  };
+const handleShowLess = () => {
+  setVisibleCount(3);
+};
 
   return (
     <section id="case" className="c-space my-20">
@@ -80,7 +77,7 @@ const stepCarousel = (idx, dir, len) => {
                     className="flex items-center gap-2 cursor-pointer text-white-600 hover:text-yellow-300 transition"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    View Project ↗
+                    View Prototype ↗
                   </a>
                 </div>
               )}
@@ -89,18 +86,20 @@ const stepCarousel = (idx, dir, len) => {
         ))}
       </div>
 
-      {/* Show More / Show Less Button */}
-            {caseStudy.length > 3 && (
-              <div className="flex justify-center mt-10">
-                <button
-                  onClick={handleShowMore}
-                  className="text-yellow-300 hover:text-white border border-yellow-300 hover:bg-yellow-300/10 transition px-6 py-2 rounded-full"
-                >
-                  {visibleCount >= caseStudy.length ? "Show Less" : "Show More"}
-                </button>
-              </div>
-            )}
-      
+{/* Show More / Show Less Button (replace the current button block) */}
+{caseStudy.length > 3 && (
+  <div className="flex justify-center mt-10">
+    <button
+      onClick={() =>
+        visibleCount >= caseStudy.length ? handleShowLess() : handleShowMore()
+      }
+      className="text-yellow-300 hover:text-white border border-yellow-300 hover:bg-yellow-300/10 transition px-6 py-2 rounded-full"
+    >
+      {visibleCount >= caseStudy.length ? "Show Less" : "Show More"}
+    </button>
+  </div>
+)}
+
 
       {/* Modal */}
       {selectedCaseStudy && (

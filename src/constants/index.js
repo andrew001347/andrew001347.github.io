@@ -582,7 +582,7 @@ export const graphicDesign = [
     description:
       "Awareness ad series combining impactful visuals and concise messaging for print media in various page sizes.",
     images: ["/assets/graphics/Kim-Andrew-Texting-Ad_page-0001.jpg","/assets/graphics/FullPage.jpg","/assets/graphics/2Thirds.jpg","/assets/graphics/1Third.jpg"],  
-    tags: ["Adobe InDesign", "Advertising Design"],
+    tags: ["Adobe InDesign","Adobe Photoshop", "Advertising Design"],
   },
 
 ];
